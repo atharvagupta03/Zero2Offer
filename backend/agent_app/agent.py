@@ -1,6 +1,6 @@
 # from dotenv import load_dotenv
 # load_dotenv()
-
+import sys
 import asyncio
 from agents import Agent, Runner
 from agents.mcp import MCPServerStdio, MCPServerStdioParams
@@ -11,7 +11,7 @@ async def ask_agent(user_id: str, user_input: str) -> str:
     """
     mcp_server = MCPServerStdio(
         params=MCPServerStdioParams(
-            command="python3",
+            command=sys.executable,
             args=["backend/mcp_server/server.py"],
         )
     )
