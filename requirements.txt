@@ -1,7 +1,6 @@
 streamlit
-mcp
+mcp>=1.0.0
 openai-agents
-python-dotenv
 fastapi
 uvicorn
 requests
