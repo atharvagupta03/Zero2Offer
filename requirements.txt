@@ -5,3 +5,4 @@ fastapi
 uvicorn
 requests
 PyPDF2
+dotenv
