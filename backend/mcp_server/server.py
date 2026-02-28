@@ -1,12 +1,12 @@
 import sys
 from pathlib import Path
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 # Add mcp_server directory to sys.path
 CURRENT_DIR = Path(__file__).parent
 sys.path.append(str(CURRENT_DIR))
 
-load_dotenv()
+# load_dotenv()
 
 from mcp.server.fastmcp import FastMCP
 
