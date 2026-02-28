@@ -1,0 +1,7 @@
+mcp
+openai-agents
+python-dotenv
+fastapi
+uvicorn
+requests
+PyPDF2
