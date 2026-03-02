@@ -5,6 +5,12 @@ from pathlib import Path
 from backend.agent_app.agent import ask_agent
 from backend.auth import login_user, register_user
 
+try:
+    if "SERPAPI_KEY" in st.secrets:
+        os.environ["SERPAPI_KEY"] = st.secrets["SERPAPI_KEY"]
+except Exception:
+    pass
+
 BASE_DIR = Path(__file__).resolve().parent
 UPLOAD_DIR = BASE_DIR / "backend" / "mcp_server" / "data" / "uploads"
 
