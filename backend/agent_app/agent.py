@@ -1,9 +1,17 @@
 # from dotenv import load_dotenv
 # load_dotenv()
 import sys
+import os
+import streamlit as st
 import asyncio
 from agents import Agent, Runner
 from agents.mcp import MCPServerStdio, MCPServerStdioParams
+
+try:
+    if "SERPAPI_KEY" in st.secrets:
+        server_env["SERPAPI_KEY"] = st.secrets["SERPAPI_KEY"]
+except Exception:
+    pass
 
 async def ask_agent(user_id: str, user_input: str) -> str:
     """
@@ -13,6 +21,7 @@ async def ask_agent(user_id: str, user_input: str) -> str:
         params=MCPServerStdioParams(
             command=sys.executable,
             args=["backend/mcp_server/server.py"],
+            env=server_env
         )
     )
 
