@@ -7,6 +7,8 @@ import asyncio
 from agents import Agent, Runner
 from agents.mcp import MCPServerStdio, MCPServerStdioParams
 
+server_env = os.environ.copy()
+
 try:
     if "SERPAPI_KEY" in st.secrets:
         server_env["SERPAPI_KEY"] = st.secrets["SERPAPI_KEY"]
